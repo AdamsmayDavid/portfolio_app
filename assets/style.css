@@ -2,6 +2,9 @@ body{
  background-color: #161831;
 }
 
+
+
+
 /* background animation */
 .wrapper {
   z-index: -1 !important;
@@ -9,9 +12,7 @@ body{
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #24C6DC; 
-  background: -webkit-linear-gradient(to bottom, #161831, #161831);  
-  background: linear-gradient(to bottom, #161831, #161831); 
+ 
 }
 
 .box div {
@@ -19,7 +20,7 @@ body{
   width: 60px;
   height: 60px;
   background-color: transparent;
-  border: 6px solid rgba(255,255,255,0.8);
+  border: 6px solid rgba(255, 255, 255, 0.8);
 }
 
 .box div:nth-child(1) {
@@ -141,7 +142,11 @@ body{
   } */
 
 
+/* animated-image */
 
+.animated-image{
+  z-index: -2 !important;
+}
 /* For Download cv */
 
  .btn-cv{
@@ -269,12 +274,12 @@ body{
 } 
 
 /* scrol bar */
-/* .scroll-progress-bar {
+.scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: blue;
+  background-color: #5544AC;
   width: 100%;
   height: 10px;
   scale: 0 1;
@@ -307,11 +312,11 @@ body{
 }
 
 /* // animation keyframes */
-/* @keyframes scaleUp {
+@keyframes scaleUp {
   to {
     scale: 1 1;
   }
-} */ 
+} 
 
 /* Coding is hard */
 .animated-text {
@@ -354,3 +359,49 @@ body{
 
 
 /*  timeline */
+.timeline{
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.con{
+padding: 10px 50px;
+position: relative;
+width: 50%;
+}
+
+.text-box{
+  padding: 20px 30px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 6px !important;
+  font-size: 15px;
+
+}
+
+.left-container{
+  left: 25%;
+}
+.right-container{
+  right:25%;
+}
+
+.timeline::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+.con img{
+  position: absolute;
+  width: 40px;
+  right: -20px;
+  top:32px;
+  z-index: 10;
+
+}
