@@ -2,13 +2,9 @@ body{
  background-color: #161831;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 /* background animation */
 .wrapper {
+  z-index: -1 !important;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -117,11 +113,6 @@ body {
 
 
 /* Hi there */
-.wrapper {
-    /*This part is important for centering*/
-    display: grid;
-    place-items: center;
-  }
 
 
   
@@ -278,7 +269,7 @@ body {
 } 
 
 /* scrol bar */
-.scroll-progress-bar {
+/* .scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -316,11 +307,11 @@ body {
 }
 
 /* // animation keyframes */
-@keyframes scaleUp {
+/* @keyframes scaleUp {
   to {
     scale: 1 1;
   }
-}
+} */ 
 
 /* Coding is hard */
 .animated-text {
@@ -360,3 +351,6 @@ body {
   99% { background-color: transparent; }
   100%  { background-color: #ccc; }
 }
+
+
+/*  timeline */
