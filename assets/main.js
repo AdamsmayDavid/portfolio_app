@@ -39,3 +39,15 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+
+   // for navbar
+      var nav = document.querySelector('nav');
+
+    window.addEventListener('scroll', function () {
+        if(window.pageYOffset > 100) {
+           nav.classList.add('bg-primary',  'shadow');
+
+       } else {
+            nav.classList.remove('bg-primary', 'shadow');
+      }
+  });

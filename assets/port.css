@@ -1,0 +1,102 @@
+body .bg-animation{
+    background-color: #0010f2 !important;
+    overflow-x: hidden;
+   }
+   
+   column {
+    float: auto !important;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 50%;
+      display: block;
+      padding:4px !important;
+    }
+  }
+  
+  /* Style the counter cards */
+  .projects .card {
+    box-shadow:2px 2px 6px 0 #525CEB;
+    padding: 0px;
+    text-align: center;
+    /* color: #0275d8;     */
+    border-radius: 0 !important;
+    transition: transform .1s;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3D3B40 !important;
+  }
+
+  #projects p{
+    color: white !important;
+  }
+  
+  .projects .card:hover{
+    box-shadow:0;
+    padding: 0px;
+    text-align: center;  
+    border-radius: 0 !important;
+    transform: scale(1.2) !important;
+    z-index: 1 !important;
+    cursor: pointer !important;
+
+    
+  }
+
+  .projects{
+    background-color: #3D3B40;
+    height: 100% !important;
+    width: 100%;
+    padding: 5px !important;
+   
+  }
+
+  /* services */
+  .services {
+    background-color: #3D3B40 !important;
+  }
+
+  /* .projects img:hover{
+    opacity: 0.5 !important;
+  } */
+
+  @media screen and (max-width: 800px) 
+  {
+    
+    html,body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      
+    }
+
+  }
+    /* If the screen size is 1200px wide or more, set the font-size to 80px */
+    @media (min-width: 1200px) {
+      .responsive-font-example {
+        font-size: 80px;
+      }
+    }
+    /* If the screen size is smaller than 1200px, set the font-size to 80px */
+    @media (max-width: 1199.98px) {
+      .responsive-font-example {
+        font-size: 30px;
+      }
+    }
+  
+   
+   
