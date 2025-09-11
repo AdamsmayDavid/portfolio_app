@@ -1,0 +1,66 @@
+/* General */
+body {
+  background: #141414; /* Netflix dark */
+  color: #e9ecef;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.section-title {
+  color: #fff;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #ffc107; /* Netflix red */
+}
+
+/* Navbar */
+.custom-navbar {
+  background: rgba(0,0,0,0.9);
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000, #141414);
+}
+
+/* btn change color */
+
+.hero .btn-change{
+  background-color: #ffc107;
+}
+
+/* Services */
+.service-box {
+  background: #1f1f1f;
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform .3s ease;
+}
+.service-box:hover {
+  transform: translateY(-8px);
+  background: #e50914;
+  color: #fff;
+}
+
+/* Portfolio */
+#portfolio img {
+  transition: transform .3s ease, opacity .3s ease;
+}
+#portfolio img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn-outline-light.active,
+.btn-outline-light:hover {
+  background: #e50914;
+  color: #fff;
+}

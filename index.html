@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adams | Portfolio</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <img src="https://picsum.photos/seed/logo/40/40" alt="Logo" class="rounded-circle">
+        <span>Adams</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero d-flex align-items-center text-center text-white">
+    <div class="container">
+      <img src="https://picsum.photos/seed/profile/200" alt="Profile Photo" class="hero-img mb-4 rounded-circle shadow">
+      <h1 class="display-4 fw-bold">I'm <span class="highlight">Adams</span></h1>
+      <p class="lead">UI/UX Designer • Graphic Designer • Branding Specialist</p>
+      <div class="mt-4">
+        <a href="cv.pdf" download class="btn btn-change btn-lg me-2"><i class="fa-solid fa-file-arrow-down me-2"></i>Download CV</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-briefcase me-2"></i>Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5 text-center">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="mt-3">I craft modern UI/UX designs, logos, and creative graphics to bring digital brands to life.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-5 bg-dark text-center text-white">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4"><div class="service-box"><i class="fa-solid fa-pencil-ruler fa-2x"></i><h5>UI/UX Design</h5></div></div>
+        <div class="col-md-4"><div class="service-box"><i class="fa-solid fa-pen-nib fa-2x"></i><h5>Graphic Design</h5></div></div>
+        <div class="col-md-4"><div class="service-box"><i class="fa-solid fa-rocket fa-2x"></i><h5>Branding</h5></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-5 text-center">
+    <div class="container">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+        <!-- <button class="btn btn-outline-light active" data-filter="all">All</button> -->
+        <button class="btn btn-outline-light active" data-filter="websites">Websites</button>
+        <button class="btn btn-outline-light" data-filter="digital">Digital Marketing</button>
+        <button class="btn btn-outline-light" data-filter="photo">Photo Manipulation</button>
+        <button class="btn btn-outline-light" data-filter="branding">Branding</button>
+        <button class="btn btn-outline-light" data-filter="shirt">Shirt Design</button>
+      </div>
+      <div class="row g-3 mt-4">
+        <!-- 15 images -->
+        <div class="col-md-4 portfolio-item websites"><img src="https://picsum.photos/seed/w1/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item websites"><img src="https://picsum.photos/seed/w2/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item digital"><img src="https://picsum.photos/seed/d1/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item digital"><img src="https://picsum.photos/seed/d2/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item photo"><img src="https://picsum.photos/seed/p1/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item photo"><img src="https://picsum.photos/seed/p2/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item branding"><img src="https://picsum.photos/seed/b1/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item branding"><img src="https://picsum.photos/seed/b2/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item shirt"><img src="https://picsum.photos/seed/s1/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item shirt"><img src="https://picsum.photos/seed/s2/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item branding"><img src="https://picsum.photos/seed/b3/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item digital"><img src="https://picsum.photos/seed/d3/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item photo"><img src="https://picsum.photos/seed/p3/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item websites"><img src="https://picsum.photos/seed/w3/600/400" class="img-fluid rounded"></div>
+        <div class="col-md-4 portfolio-item shirt"><img src="https://picsum.photos/seed/s3/600/400" class="img-fluid rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-5 bg-dark text-center text-white">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-6 col-md-3"><i class="fa-brands fa-figma fa-2x text-info"></i><p>Figma</p></div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-camera-retro fa-2x text-warning"></i><p>Photoshop</p></div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-palette fa-2x text-danger"></i><p>Illustrator</p></div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-draw-polygon fa-2x text-primary"></i><p>CorelDRAW</p></div>
+        <div class="col-6 col-md-3"><i class="fa-brands fa-html5 fa-2x text-danger"></i><p>HTML</p></div>
+        <div class="col-6 col-md-3"><i class="fa-brands fa-css3-alt fa-2x text-primary"></i><p>CSS</p></div>
+        <div class="col-6 col-md-3"><i class="fa-brands fa-js fa-2x text-warning"></i><p>JavaScript</p></div>
+        <div class="col-6 col-md-3"><i class="fa-brands fa-bootstrap fa-2x text-purple"></i><p>Bootstrap</p></div>
+        <div class="col-6 col-md-3"><i class="fa-brands fa-facebook fa-2x text-info"></i><p>Social Media</p></div>
+        <div class="col-6 col-md-3"><i class="fa-solid fa-shirt fa-2x text-success"></i><p>Shirt Design</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-5 text-center">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-briefcase fa-2x mb-2 text-danger"></i><h5>Graphic Designer</h5><p>7 Years of Experience in Logo Design, Branding, and UI/UX Projects</p></div></div>
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-pen-nib fa-2x mb-2 text-info"></i><h5>Logo Designer</h5><p>Created 200+ logos for startups and companies</p></div></div>
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-laptop-code fa-2x mb-2 text-warning"></i><h5>Web Designer</h5><p>Designed modern responsive websites</p></div></div>
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-paintbrush fa-2x mb-2 text-success"></i><h5>UI/UX Designer</h5><p>Worked with Figma, Adobe XD, and prototypes</p></div></div>
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-users fa-2x mb-2 text-primary"></i><h5>Social Media Manager</h5><p>Created digital marketing graphics & campaigns</p></div></div>
+        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-shirt fa-2x mb-2 text-secondary"></i><h5>Shirt Designer</h5><p>Custom shirt graphics and print designs</p></div></div>
+        <div class="col-md-6 mx-auto"><div class="exp-card"><i class="fa-solid fa-rocket fa-2x mb-2 text-danger"></i><h5>Branding Specialist</h5><p>Helped businesses build strong brand identities</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 bg-dark text-center text-white">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:admdvd14@gmail.com" class="text-warning">admdvd14@gmail.com</a></p>
+      <form class="mt-4 contact-form mx-auto" style="max-width:600px;">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger w-100"><i class="fa-solid fa-paper-plane me-2"></i>Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-3 text-center bg-black text-white">
+    <p class="small mb-0">© <span id="year"></span> Adams Portfolio</p>
+  </footer>
+
+  <!-- Bootstrap + Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
