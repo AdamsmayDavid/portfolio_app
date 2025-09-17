@@ -1,43 +1,78 @@
 /* General */
 body {
-  background: #141414; /* Netflix dark */
+  background: #161831; /* Netflix dark */
   color: #e9ecef;
-  font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .section-title {
-  color: #fff;
+  color: #e9ecef;
   font-weight: 700;
 }
 
 .highlight {
-  color: #ffc107; /* Netflix red */
+  color: #00c6ff /* Netflix red */
 }
 
 /* Navbar */
-.custom-navbar {
-  background: rgba(0,0,0,0.9);
+/* .custom-navbar {
 }
-
 .navbar-brand img {
   width: 40px;
   height: 40px;
-}
+} */
 
+/* Navbar */
+    .navbar {
+      padding: 10px 25px;
+    }
+    nav.bg-dark {
+      background: #161831 !important;
+    }
+    .navbar-brand img {
+      width: 30px;
+    }
+    .navbar-nav .nav-link {
+      margin: 0 10px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #FFD700 !important;
+    }
 /* Hero */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #000, #141414);
+  background-image: 
+  url('assets/images/ddsAsset\ 1.png');
+  background-size: cover;
+  background-position: center;
 }
 
 /* btn change color */
 
 .hero .btn-change{
-  background-color: #ffc107;
+  background-color:#00c6ff;
+}
+
+.hero .btn-outline-light:hover{
+  background-color: #00c6ff;
+  color: #161831;
 }
 
 /* Services */
+
+#portfolio{
+  background: linear-gradient(
+       #161831, #1618310e,  #16183107, #161831 /* top color with opacity */
+             /* bottom color with opacity */
+    ),
+    url('/portfolio_app/assets/images/ddAsset\ 2.png') center/cover no-repeat;
+  z-index: -1;
+  opacity: 5; /* overall opacity of the gradient + image */
+}
+
 .service-box {
   background: #1f1f1f;
   padding: 30px;
@@ -46,21 +81,186 @@ body {
 }
 .service-box:hover {
   transform: translateY(-8px);
-  background: #e50914;
-  color: #fff;
+  background: #00c6ff;
+  color: #fff !important;
+  box-shadow: 0 0 30px rgba(0,198,255,0.4);
 }
 
+.service-box {
+color: #00c6ff;
+ box-shadow: 0 0 30px rgba(0,198,255,0.4);
+}
+
+
 /* Portfolio */
-#portfolio img {
+/* #portfolio img {
   transition: transform .3s ease, opacity .3s ease;
 }
 #portfolio img:hover {
   transform: scale(1.05);
   opacity: 0.9;
-}
+} */
 
 .btn-outline-light.active,
 .btn-outline-light:hover {
-  background: #e50914;
+  background: #00c6ff;
   color: #fff;
 }
+
+/* Coding is hard */
+.animated-text {
+  position: relative;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animated-text p {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.animated-text p span.typed-text {
+  font-weight: normal;
+  color:  #ccc;
+}
+.animated-text p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 2px;
+  animation: blink 1s infinite;
+}
+.animated-text p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+  .hero {
+    position: relative;
+    height: 100vh; /* adjust if needed */
+    overflow: hidden;
+  }
+  .hero canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* stays behind content */
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1; /* your existing content will show above */
+  }
+
+  /* This is for cv and hire me btn to work */
+  #rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* let clicks pass through */
+  z-index: 1;
+}
+
+  #rainin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* let clicks pass through */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2; /* put content above the canvas */
+}
+
+
+    /* about timeline  */
+    .section-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+    /* Info Card */
+    .info-card {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      background: #6f42c1;
+      color: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0px 6px 14px rgba(0,0,0,0.3);
+    }
+    .info-card h4 {
+      font-weight: bold;
+    }
+    .info-card p {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    
+    /* Timeline */
+    .about {
+      padding: 80px 0;
+    }
+
+    .about-img {
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,198,255,0.4);
+      max-width: 90%;
+      height: auto;
+    }
+
+    .about-card {
+      background: #16213e;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0,198,255,0.2);
+    }
+
+    .about-card h2 {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    .about-card p {
+      color: #bbb;
+    }
+
+    .about-card h3 {
+      color: #00c6ff;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    @media(max-width: 768px) {
+      .about-card {
+        text-align: center;
+        padding: 20px;
+      }
+      .about-card h2 {
+        font-size: 1.5rem;
+      }
+      .about-card h3 {
+        font-size: 1.4rem;
+      }
+    }
+
+
+    
