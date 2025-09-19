@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
     const heroContent = document.getElementById('heroContent');
     const scrollY = window.scrollY;
 
-    if (scrollY > 150) {
+    if (scrollY > 500) {
       heroContent.classList.add('removed');
     } else {
       heroContent.classList.remove('removed');
