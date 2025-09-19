@@ -1,30 +1,3 @@
-// Portfolio filter
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll("[data-filter]");
-  const items = document.querySelectorAll(".portfolio-item");
-
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
-
-      // Active button
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Filter items
-      items.forEach(item => {
-        if (filter === "all" || item.classList.contains(filter)) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    });
-  });
-
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
-});
 
 // animated text
 const typedTextSpan = document.querySelector(".typed-text");
@@ -69,70 +42,112 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
 
+// text dissapeared hero sec 
+  window.addEventListener('scroll', function () {
+    const heroContent = document.getElementById('heroContent');
+    const scrollY = window.scrollY;
 
+    if (scrollY > 150) {
+      heroContent.classList.add('removed');
+    } else {
+      heroContent.classList.remove('removed');
+    }
+  });
 // background raining hero sec
 
-const canvas = document.getElementById("rain");
-  const ctx = canvas.getContext("2d");
+const canvas = document.getElementById("universe");
+const ctx = canvas.getContext("2d");
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let stars = [];
+let planets = [];
+
+class Star {
+  constructor(x, y, size, speed) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.speed = speed;
   }
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
+  draw() {
+    ctx.fillStyle = "rgba(0, 200, 255, 0.8)";
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#00c6ff";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  update(scrollY) {
+    this.y += this.speed + scrollY * 0.002; // scroll makes stars drift
+    if (this.y > canvas.height) {
+      this.y = 0;
+      this.x = Math.random() * canvas.width;
+    }
+    this.draw();
+  }
+}
 
-  let drops = [];
+class Planet {
+  constructor(radius, size, speed, color) {
+    this.radius = radius;
+    this.size = size;
+    this.speed = speed;
+    this.color = color;
+    this.angle = Math.random() * Math.PI * 2;
+  }
+  draw() {
+    let x = canvas.width / 2 + Math.cos(this.angle) * this.radius;
+    let y = canvas.height / 2 + Math.sin(this.angle) * this.radius;
 
-  class Drop {
-    constructor(x, y, length, speed) {
-      this.x = x;
-      this.y = y;
-      this.length = length;
-      this.speed = speed;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.moveTo(this.x, this.y);
-      ctx.lineTo(this.x, this.y + this.length);
-      ctx.strokeStyle = "#00c6ff"; // tech blue glow
-      ctx.lineWidth = 1.2;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = " #00c6ff";
-      ctx.stroke();
-    }
-    update() {
-      this.y += this.speed;
-      if (this.y > canvas.height) {
-        this.y = -this.length;
-        this.x = Math.random() * canvas.width;
-      }
-      this.draw();
-    }
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = this.color;
+    ctx.arc(x, y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  update(scrollY) {
+    this.angle += this.speed + scrollY * 0.00000001; // scroll influences orbit speed
+    this.draw();
+  }
+}
+
+// Init stars + planets
+function init() {
+  stars = [];
+  planets = [];
+
+  for (let i = 0; i < 150; i++) {
+    stars.push(new Star(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, Math.random() * 0.5 + 0.2));
   }
 
-  function init() {
-    drops = [];
-    for (let i = 0; i < 150; i++) {
-      let x = Math.random() * canvas.width;
-      let y = Math.random() * canvas.height;
-      let length = Math.random() * 20 + 10;
-      let speed = Math.random() * 5 + 2;
-      drops.push(new Drop(x, y, length, speed));
-    }
-  }
+  planets.push(new Planet(80, 8, 0.01, "#ffcc00"));  // yellow
+  planets.push(new Planet(150, 12, 0.008, "#00ffcc")); // teal
+  planets.push(new Planet(220, 6, 0.006, "#ff0066"));  // pink
+}
+init();
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let drop of drops) {
-      drop.update();
-    }
-    requestAnimationFrame(animate);
-  }
+let scrollY = 0;
+window.addEventListener("scroll", () => {
+  scrollY = window.scrollY;
+});
 
-  init();
-  animate();
+// Animation loop
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  stars.forEach(star => star.update(scrollY));
+  planets.forEach(planet => planet.update(scrollY));
+
+  requestAnimationFrame(animate);
+}
+animate();
 
    // for navbar
   //     var nav = document.querySelector('nav');
@@ -209,4 +224,67 @@ counters.forEach(counter => {
   });
 
 
+  //carousel projects 
+
+  document.addEventListener("DOMContentLoaded", function () {
+  let itemsPerSlide = window.innerWidth < 720 ? 1 : 3;
+  let currentIndex = 0;
+  const carouselInner = document.getElementById("carouselInner");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function getVisibleItems(){
+    return Array.from(document.querySelectorAll(".multi-carousel-item")).filter(i=>i.style.display!=="none");
+  }
+  function updateConfig(){ itemsPerSlide = window.innerWidth < 720 ? 1 : 3; }
+  function updateCarousel(){
+    const offset = (currentIndex * -100) / itemsPerSlide;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+    document.querySelectorAll(".multi-carousel-item").forEach((item,i)=>{
+      item.classList.toggle("", i >= currentIndex && i < currentIndex+itemsPerSlide);
+    });
+  }
+
+  function next(){
+    const visibleItems = getVisibleItems();
+    const totalItems = visibleItems.length;
+    currentIndex++;
+    if(currentIndex > totalItems - itemsPerSlide){ currentIndex = 0; } // loop
+    updateCarousel();
+  }
+  function prev(){
+    const visibleItems = getVisibleItems();
+    const totalItems = visibleItems.length;
+    currentIndex--;
+    if(currentIndex < 0){ currentIndex = totalItems - itemsPerSlide; } // loop back
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener("click", prev);
+  nextBtn.addEventListener("click", next);
+
+  // Filtering
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  filterBtns.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      filterBtns.forEach(b=>b.classList.remove("btn-dark"));
+      filterBtns.forEach(b=>b.classList.add("btn-outline-dark"));
+      btn.classList.add("btn-dark");
+      btn.classList.remove("btn-outline-dark");
+      const filter=btn.getAttribute("data-filter");
+      document.querySelectorAll(".multi-carousel-item").forEach(item=>{
+        if(filter==="all" || item.dataset.category===filter){ item.style.display="block"; }
+        else{ item.style.display="none"; }
+      });
+      currentIndex=0;
+      updateCarousel();
+    });
+  });
+
+  updateCarousel();
+  window.addEventListener("resize",()=>{ updateConfig(); updateCarousel(); });
+});
+
+
+  // emoji hi
   
