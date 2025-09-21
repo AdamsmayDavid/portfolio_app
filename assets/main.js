@@ -26,8 +26,8 @@ window.addEventListener("load", () => {
         }
       });
 
-    }, 300); // match fade transition
-  }, 1000); // overlay duration
+    }, 700); // match fade transition
+  }, 3000); // overlay duration
 });
 
 // Reload animation end
