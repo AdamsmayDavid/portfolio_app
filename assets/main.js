@@ -1,3 +1,36 @@
+// reload section
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("reloadOverlay");
+
+  // Disable scroll during overlay
+  document.body.style.overflow = "hidden";
+
+  // Wait 3s then fade out overlay
+  setTimeout(() => {
+    overlay.classList.add("fade-out");
+
+    setTimeout(() => {
+      overlay.remove(); // Remove overlay from DOM
+      document.body.style.overflow = "auto";
+
+      // ✅ Enable main effects (hero, navbar, etc.)
+      document.body.classList.add("ready");
+
+      // Example: Hero scroll fade effect
+      window.addEventListener("scroll", () => {
+        const heroContent = document.getElementById("heroContent");
+        if (window.scrollY > 200) {
+          heroContent.classList.add("removed");
+        } else {
+          heroContent.classList.remove("removed");
+        }
+      });
+
+    }, 300); // match fade transition
+  }, 1000); // overlay duration
+});
+
+// Reload animation end
 
 // animated text
 const typedTextSpan = document.querySelector(".typed-text");
@@ -149,29 +182,63 @@ function animate() {
 }
 animate();
 
-   // for navbar
-  //     var nav = document.querySelector('nav');
+// Prevent browser from remembering scroll position
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
-  //   window.addEventListener('scroll', function () {
-  //       if(window.pageYOffset > 100) {
-  //          nav.classList.add('bg-dark',  'shadow');
+// Smooth transition back to hero on refresh/load
+window.addEventListener('load', function () {
+  setTimeout(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  //      } else {
-  //           nav.classList.remove('bg-dark', 'shadow');
-  //     }
-  // });
-
-  var nav = document.querySelector('nav');
-
-window.addEventListener('scroll', function () {
-    if (window.pageYOffset > 100) {
-        // nav.style.backgroundColor = '#161831;';
-        nav.classList.add('bg-dark','shadow'); // Keep the shadow if needed
-    } else {
-        // nav.style.backgroundColor = 'transparent'; // Or whatever the default color is
-        nav.classList.remove('bg-dark','shadow');
-    }
+    // reset after scroll so other instant jumps aren't forced smooth
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = "";
+    }, 1000);
+  }, 100);
 });
+
+//navbar
+// Scroll & navbar shrink
+window.addEventListener('scroll', function () {
+  const heroContent = document.getElementById('heroContent');
+  const navbar = document.querySelector('.navbar');
+  const scrollY = window.scrollY;
+
+  // Hero content fade/slide
+  if (scrollY > 500) {
+    heroContent.classList.add('removed');
+  } else {
+    heroContent.classList.remove('removed');
+  }
+
+  // Navbar shrink effect
+  if (scrollY > 100) {
+    navbar.classList.add('shrink');
+  } else {
+    navbar.classList.remove('shrink');
+  }
+});
+
+// Close mobile navbar on link click + reload on Home
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const navbarToggler = document.querySelector('.navbar-collapse');
+    if (navbarToggler.classList.contains('show')) {
+      new bootstrap.Collapse(navbarToggler).hide();
+    }
+
+    // Reload the page if "Home" is clicked
+    if (link.textContent.trim().toLowerCase() === "home") {
+      e.preventDefault(); 
+      location.href = location.origin + location.pathname; 
+    }
+  });
+});
+
+// navbar end
 
 
 // Count-up function

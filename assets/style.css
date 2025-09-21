@@ -7,6 +7,49 @@ body {
   overflow-x: hidden;
 }
 
+/* reload body */
+/* Fullscreen overlay */
+#reloadOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Loader animation */
+.loader span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 50px;
+  animation: bounce 1s infinite alternate;
+}
+.loader span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loader span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); opacity: 0.6; }
+  to { transform: translateY(-20px); opacity: 1; }
+}
+
+/* Fade out */
+#reloadOverlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* reload body end */
 .section-title {
   color: #00f2ff; /* bright cyan */
   text-shadow: 0 0 15px #00f2ff, 0 0 30px #00c6ff;
@@ -19,6 +62,17 @@ body {
 font-family: 'Orbitron', sans-serif;
 }
 
+a {
+  color: #1e1e1e;
+  transition: all 0.5s ease-in-out;
+}
+
+a:hover {
+  color: #B11226;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
 /* Navbar */
 /* .custom-navbar {
 }
@@ -28,23 +82,70 @@ font-family: 'Orbitron', sans-serif;
 } */
 
 /* Navbar */
-    .navbar {
-      padding: 10px 25px;
-    }
-    nav.bg-dark {
-      background: #161831 !important;
-    }
-    .navbar-brand img {
-      width: 30px;
-    }
-    .navbar-nav .nav-link {
-      margin: 0 10px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #FFD700 !important;
-    }
+.navbar {
+  padding: 10px 25px;
+  transition: background 0.4s ease, padding 0.3s ease;
+}
+
+nav.bg-dark {
+  background: #161831 !important;
+}
+
+.navbar-brand img {
+  width: 30px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+/* Nav Links */
+.navbar-nav .nav-link {
+  margin: 0 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+/* Hover Color */
+.navbar-nav .nav-link:hover {
+  color: #FFD700 !important;
+}
+
+/* Link Underline Animation */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #FFD700;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Navbar js smooth trans */
+
+/* Navbar transition */
+.navbar {
+  padding: 20px 25px;
+  background: #161831 !important;
+  transition: padding 0.4s ease, background 0.4s ease;
+}
+
+/* Shrinked navbar */
+.navbar.shrink {
+  padding: 8px 25px;
+  background: #0d0f25 !important; /* slightly darker when compact */
+}
+
 /* Hero */
 /* .hero {
   position: sticky !important;
@@ -60,7 +161,7 @@ font-family: 'Orbitron', sans-serif;
 } */
 /* Hero Section */
 .hero {
-  position: sticky;
+  position: sticky !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -70,7 +171,6 @@ font-family: 'Orbitron', sans-serif;
   justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;
   z-index: 0; /* Ensures it's above canvas */
   background: transparent;
   
@@ -178,6 +278,7 @@ canvas#universe {
   60%, 100% { transform: rotate(0.0deg); }
 }
 
+/*
 
 .hero .btn-change{
  border: 1px solid #00f2ff;
@@ -187,7 +288,7 @@ canvas#universe {
 
 
 .hero .btn-change:hover {
-  background-color: rgba(255, 0, 102, 0.1); /* example with light pink */
+  background-color: rgba(255, 0, 102, 0.1); 
   box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066;
   color: #ff0066;
 }
@@ -200,7 +301,7 @@ canvas#universe {
   background-color:  220, 6, 0.006, #00ffcc;
   box-shadow: 0 0 15px #00ffcc, 0 0 30px#00ffcc;
   color: #00ffcc;
-}
+} */
 
 
 
