@@ -1,34 +1,12 @@
-// reload section
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("reloadOverlay");
 
-  // Disable scroll during overlay
-  document.body.style.overflow = "hidden";
-
-  // Wait 3s then fade out overlay
+  // Optional: add a small delay for effect
   setTimeout(() => {
     overlay.classList.add("fade-out");
-
-    setTimeout(() => {
-      overlay.remove(); // Remove overlay from DOM
-      document.body.style.overflow = "auto";
-
-      // ✅ Enable main effects (hero, navbar, etc.)
-      document.body.classList.add("ready");
-
-      // Example: Hero scroll fade effect
-      window.addEventListener("scroll", () => {
-        const heroContent = document.getElementById("heroContent");
-        if (window.scrollY > 200) {
-          heroContent.classList.add("removed");
-        } else {
-          heroContent.classList.remove("removed");
-        }
-      });
-
-    }, 100); // match fade transition
-  }, 1000); // overlay duration
+  }, 2000); // 2 seconds then fade out
 });
+
 
 // Reload animation end
 
