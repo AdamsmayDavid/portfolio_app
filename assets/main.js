@@ -26,8 +26,8 @@ window.addEventListener("load", () => {
         }
       });
 
-    }, 700); // match fade transition
-  }, 3000); // overlay duration
+    }, 100); // match fade transition
+  }, 1000); // overlay duration
 });
 
 // Reload animation end
@@ -355,3 +355,43 @@ counters.forEach(counter => {
 
   // emoji hi
   
+
+  // about page image hover
+
+
+document.querySelectorAll('.about-img-wrap').forEach(w => {
+  w.addEventListener('touchstart', function(e) {
+    // toggle class so CSS .hover rules apply; single tap toggles, second tap follows link if any
+    this.classList.toggle('hover');
+    // allow the tap through if needed
+  }, {passive: true});
+});
+
+
+// <!-- JavaScript -->
+document.addEventListener("DOMContentLoaded", () => {
+  const icons = document.querySelectorAll(".service-icon");
+
+  // Assign different animations
+  if (icons[0]) icons[0].classList.add("animate-bounce");
+  if (icons[1]) icons[1].classList.add("animate-pulse");
+  if (icons[2]) icons[2].classList.add("animate-rotate");
+});
+
+//experience
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-content");
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    items.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        item.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // run once on load
+});

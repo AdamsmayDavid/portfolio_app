@@ -22,16 +22,20 @@
   <!--  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/dp_hover.png">
 
 </head>
 <body>
     <!-- Futuristic Reload Overlay -->
  <div id="reloadOverlay">
-    <div class="loader">
-      <span><img src="assets/images/1Asset 2.png" alt=""></span><span><img src="assets/images/2Asset 3.png" alt=""></span><span><img src="assets/images/3Asset 4.png" alt="">
-      </span><span><img src="assets/images/4Asset 5.png" alt=""></span><span><img src="assets/images/5Asset 6.png" alt=""></span>
-    </div>
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
+</div>
+
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-trans navbar-dark fixed-top custom-navbar">
@@ -45,10 +49,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav gap-3">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline-section">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -56,7 +60,7 @@
   </nav>
 
  <!-- HERO -->
-<header class="hero d-flex align-items-center text-center text-white" data-aos="fade-in">
+<header class="hero d-flex align-items-center text-center text-white">
   <canvas id="universe"></canvas>
 
   <!-- Hero Content -->
@@ -64,7 +68,7 @@
     <!-- Greeting -->
     <h1 class="emoji">Hi<span class="wave fs-1">👋</span> There! I'm</h1>
     <h1 class="display-4 fw-bold">
-      <span class="highlight">ADAMS MAY DAVID</span>
+      <span class="highlight" >ADAMS MAY DAVID</span>
     </h1>
 
     <!-- Animated Text -->
@@ -89,15 +93,22 @@
 
 
    <!-- About Section -->
-      <section id="about" class="container-fluid bg-trans py-5">
+      <section id="about" class="container-fluid bg-trans py-5" >
         <div class="about container">
         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">About me</h2>
         <div class="row align-items-center gy-5">
           
-          <!-- Left Side Image -->
-          <div class="col-lg-5 col-md-6 col-12 text-center"  data-aos="zoom-in-right" data-aos-delay="200">
-            <img src="assets/images/dp_main.png" alt="About Me" class="img-fluid about-img">
+                <!-- Left Side Image -->
+        <div class="col-lg-5 col-md-6 col-12 text-center" data-aos="zoom-in-right" data-aos-delay="200">
+          <div class="about-img-wrap">
+            <!-- default image visible on page -->
+            <img src="assets/images/dp_main.png" alt="About Me" class="img-fluid about-img-default">
+
+            <!-- hover image (will fade in on hover) -->
+            <img src="assets/images/5Asset 1.png " alt="About Me (hover)" class="img-fluid about-img-hover" aria-hidden="true">
           </div>
+        </div>
+
 
           <!-- Right Side Content -->
           <div class="col-lg-7 col-md-6 col-12">
@@ -135,55 +146,127 @@
           </div>
         </div>
       </section>
-  
+          <!-- EXPERIENCE -->
+      <!-- Experience Section -->
+      <section id="timeline-section">
+        <h2 class="timeline-title">My Journey</h2>
 
-  <!-- SERVICES -->
-  <section id="services" class=" py-5 bg-trans text-center text-white">
-    <div class="container py-5">
-      <h2 class="section-title mb-4" data-aos="zoom-in">Services</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="service-box"><i class="fa-solid fa-pencil-ruler fa-2x"></i><h5>UI/UX Design</h5></div></div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="service-box"><i class="fa-solid fa-pen-nib fa-2x"></i><h5>Graphic Design</h5></div></div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="service-box"><i class="fa-solid fa-rocket fa-2x"></i><h5>Branding</h5></div></div>
-      </div>
-    </div>
-  </section>
+        <div class="timeline">
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class=" text-center py-5 bg-trans" data-aos="fade-up">
-        <div class="container py-5">
-      <h2 class="section-title mb-4">Recent Projects</h2>
-      <div class="text-center mb-3 py-5">
-        <button class="btn filter-btn " data-filter="all">All</button>
-        <button class="btn filter-btn" data-filter="website">Website</button>
-        <button class="btn filter-btn" data-filter="branding">Branding</button>
-        <button class="btn filter-btn" data-filter="photo">Photo Manipulation</button>
-        <button class="btn filter-btn" data-filter="logo">Logo Design</button>
-      </div>
-
-      <div class="multi-carousel-container" id="multiCarousel">
-        <div class="multi-carousel-inner" id="carouselInner">
-          <div class="multi-carousel-item" data-category="website">
-            <div class="img-container">
-              <img src="https://picsum.photos/id/1011/800/600" alt="Website">
-              <div class="caption">
-                Website Project
-              </div>
+          <!-- 2022 -->
+          <div class="timeline-item">
+            <div class="timeline-icon icon-right"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-content">
+              <span class="year">2022</span>
+              <h3>Graphic Designer</h3>
+              <p>Started working professionally as a graphic designer, creating logos and branding materials.</p>
             </div>
           </div>
-          <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1012/800/600" alt="Branding"></div></div>
-          <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1013/800/600" alt="Photo"></div></div>
-          <div class="multi-carousel-item" data-category="logo"><div class="img-container"><img src="https://picsum.photos/id/1014/800/600" alt="Logo"></div></div>
-          <div class="multi-carousel-item" data-category="website"><div class="img-container"><img src="https://picsum.photos/id/1015/800/600" alt="Website"></div></div>
-          <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1016/800/600" alt="Branding"></div></div>
-          <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1018/800/600" alt="Photo"></div></div>
-          <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1019/800/600" alt="Logo"></div></div>
+
+          <!-- 2023 -->
+          <div class="timeline-item">
+            <div class="timeline-icon icon-left "><i class="fa-solid fa-pen-nib"></i></div>
+            <div class="timeline-content">
+              <span class="year">2023</span>
+              <h3>Logo Designer</h3>
+              <p>Specialized in logo design, completing over 200 projects for startups and companies worldwide.</p>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="timeline-item">
+            <div class="timeline-icon icon-right"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="timeline-content">
+              <span class="year">2024</span>
+              <h3>Web Designer</h3>
+              <p>Transitioned to web design, creating modern and responsive websites with a strong visual identity.</p>
+            </div>
+          </div>
+
+          <!-- Now -->
+          <div class="timeline-item">
+            <div class="timeline-icon icon-left"><i class="fa-solid fa-rocket"></i></div>
+            <div class="timeline-content">
+              <span class="year">Now</span>
+              <h3>Branding Specialist</h3>
+              <p>Helping businesses establish strong brand identities with design, strategy, and creativity.</p>
+            </div>
+          </div>
+
         </div>
-        <button class="multi-carousel-control-prev" id="prevBtn"><span class="carousel-control-prev-icon"></span></button>
-        <button class="multi-carousel-control-next" id="nextBtn"><span class="carousel-control-next-icon"></span></button>
-      </div>
-    </div>
-  </section>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class=" text-center py-5 bg-trans" data-aos="fade-up">
+            <div class="container py-5">
+          <h2 class="section-title mb-4">Recent Projects</h2>
+          <div class="text-center mb-3 py-5">
+            <button class="btn filter-btn " data-filter="all">All</button>
+            <button class="btn filter-btn" data-filter="website">Website</button>
+            <button class="btn filter-btn" data-filter="branding">Branding</button>
+            <button class="btn filter-btn" data-filter="photo">Photo Manipulation</button>
+            <button class="btn filter-btn" data-filter="logo">Logo Design</button>
+          </div>
+
+          <div class="multi-carousel-container" id="multiCarousel">
+            <div class="multi-carousel-inner" id="carouselInner">
+              <div class="multi-carousel-item" data-category="website">
+                <div class="img-container">
+                  <img src="https://picsum.photos/id/1011/800/600" alt="Website">
+                  <div class="caption">
+                    Website Project
+                  </div>
+                </div>
+              </div>
+              <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1012/800/600" alt="Branding"></div></div>
+              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1013/800/600" alt="Photo"></div></div>
+              <div class="multi-carousel-item" data-category="logo"><div class="img-container"><img src="https://picsum.photos/id/1014/800/600" alt="Logo"></div></div>
+              <div class="multi-carousel-item" data-category="website"><div class="img-container"><img src="https://picsum.photos/id/1015/800/600" alt="Website"></div></div>
+              <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1016/800/600" alt="Branding"></div></div>
+              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1018/800/600" alt="Photo"></div></div>
+              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1019/800/600" alt="Logo"></div></div>
+            </div>
+            <button class="multi-carousel-control-prev" id="prevBtn"><span class="carousel-control-prev-icon"></span></button>
+            <button class="multi-carousel-control-next" id="nextBtn"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+      </section>
+
+
+        <!-- SERVICES -->
+      <!-- Services Section -->
+      <section id="services" class="py-5 bg-dark text-center text-white">
+        <div class="container py-5">
+          <h2 class="section-title mb-4" data-aos="zoom-in">Services</h2>
+          <div class="row g-4 mt-4">
+            
+            <!-- Service 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-box">
+                <i class="fa-solid fa-pencil-ruler fa-2x mb-3 service-icon"></i>
+                <h5>UI/UX Design</h5>
+              </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-box">
+                <i class="fa-solid fa-pen-nib fa-2x mb-3 service-icon"></i>
+                <h5>Graphic Design</h5>
+              </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-box">
+                <i class="fa-solid fa-rocket fa-2x mb-3 service-icon"></i>
+                <h5>Branding</h5>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
   
 <!-- SKILLS -->
@@ -218,7 +301,7 @@
         </div>
       </div>
       
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="800">
+      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
         <i class="fa-brands fa-html5 fa-2x text-danger floating"></i>
         <p>HTML <span class="percent">100%</span></p>
         <div class="progress futuristic">
@@ -226,7 +309,7 @@
         </div>
       </div>
       
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="1000">
+      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
         <i class="fa-brands fa-css3-alt fa-2x text-primary floating"></i>
         <p>CSS <span class="percent">95%</span></p>
         <div class="progress futuristic">
@@ -234,7 +317,7 @@
         </div>
       </div>
       
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="1200">
+      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
         <i class="fa-brands fa-js fa-2x text-warning floating"></i>
         <p>JavaScript <span class="percent">80%</span></p>
         <div class="progress futuristic">
@@ -242,7 +325,7 @@
         </div>
       </div>
       
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="1400">
+      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
         <i class="fa-brands fa-bootstrap fa-2x text-purple floating"></i>
         <p>Bootstrap <span class="percent">90%</span></p>
         <div class="progress futuristic">
@@ -254,22 +337,6 @@
   </div>
 </section>
 
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-5 text-center">
-    <div class="container p-5">
-      <h2 class="section-title">Experience</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-briefcase fa-2x mb-2 text-danger"></i><h5>Graphic Designer</h5><p>7 Years of Experience in Logo Design, Branding, and UI/UX Projects</p></div></div>
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-pen-nib fa-2x mb-2 text-info"></i><h5>Logo Designer</h5><p>Created 200+ logos for startups and companies</p></div></div>
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-laptop-code fa-2x mb-2 text-warning"></i><h5>Web Designer</h5><p>Designed modern responsive websites</p></div></div>
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-paintbrush fa-2x mb-2 text-success"></i><h5>UI/UX Designer</h5><p>Worked with Figma, Adobe XD, and prototypes</p></div></div>
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-users fa-2x mb-2 text-primary"></i><h5>Social Media Manager</h5><p>Created digital marketing graphics & campaigns</p></div></div>
-        <div class="col-md-6"><div class="exp-card"><i class="fa-solid fa-shirt fa-2x mb-2 text-secondary"></i><h5>Shirt Designer</h5><p>Custom shirt graphics and print designs</p></div></div>
-        <div class="col-md-6 mx-auto"><div class="exp-card"><i class="fa-solid fa-rocket fa-2x mb-2 text-danger"></i><h5>Branding Specialist</h5><p>Helped businesses build strong brand identities</p></div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
 <section id="contact" class="contact py-5 text-center">
