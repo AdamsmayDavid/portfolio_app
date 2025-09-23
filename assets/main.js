@@ -208,11 +208,11 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
       new bootstrap.Collapse(navbarToggler).hide();
     }
 
-    // Reload the page if "Home" is clicked
-    if (link.textContent.trim().toLowerCase() === "home") {
-      e.preventDefault(); 
-      location.href = location.origin + location.pathname; 
-    }
+    // // Reload the page if "Home" is clicked
+    // if (link.textContent.trim().toLowerCase() === "home") {
+    //   e.preventDefault(); 
+    //   location.href = location.origin + location.pathname; 
+    // }
   });
 });
 
@@ -372,4 +372,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // run once on load
+});
+
+//skills 
+
+// Animate progress bars on scroll (reset when out of view)
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll(".progress-bar");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const bar = entry.target;
+      const fill = bar.querySelector(".progress-fill");
+      const percent = bar.getAttribute("data-percent");
+
+      if (entry.isIntersecting) {
+        // Animate to target %
+        fill.style.width = percent + "%";
+      } else {
+        // Reset back to 0 when not visible
+        fill.style.width = "0%";
+      }
+    });
+  }, { threshold: 0.3 });
+
+  progressBars.forEach(bar => observer.observe(bar));
 });

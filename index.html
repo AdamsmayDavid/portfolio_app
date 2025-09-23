@@ -37,7 +37,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-trans navbar-dark fixed-top custom-navbar">
     <div class="container">
-      <a id="logo" class="logo navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+      <a id="" class=" navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
         <img src="assets/images/loog.png" alt="logo" class=" h-50 w-50">
       </a>
       <button id="NavBar" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -45,12 +45,11 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#timeline-section">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -65,7 +64,7 @@
     <!-- Greeting -->
     <h1 class="emoji">Hi<span class="wave fs-1">👋</span> There! I'm</h1>
     <h1 class="display-4 fw-bold">
-      <span class="highlight" >ADAMS MAY DAVID</span>
+      <span class="highlight-1" >ADAMS MAY DAVID</span>
     </h1>
 
     <!-- Animated Text -->
@@ -90,9 +89,9 @@
 
 
    <!-- About Section -->
-      <section id="about" class="container-fluid bg-trans py-5" >
-        <div class="about container">
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">About me</h2>
+      <section id="about" class="container-fluid bg-trans" >
+        <div class="about container py-5">
+        <h2 class="section-title py-5" data-aos="fade-up" data-aos-delay="100">About me</h2>
         <div class="row align-items-center gy-5">
           
                 <!-- Left Side Image -->
@@ -142,11 +141,91 @@
             </div>
           </div>
         </div>
-      </section>
-          <!-- EXPERIENCE -->
+
+
+              <!-- Skills Section -->
+      <section class="skills-section ">
+        <div class="container">
+          <h2 class="section-title">SKILLS</span></h2>
+          <p class="section-subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+
+          <div class="skills-container">
+            <!-- Left Column -->
+            <div class="skills-category">
+              <h3>WEB DEVELOPMENT</h3>
+
+              <div class="skill">
+                <span>HTML / CSS</span>
+                <div class="progress-bar" data-percent="95">
+                  <div class="progress-fill"><span>95%</span></div>
+                </div>
+              </div>
+
+              <div class="skill">
+                <span>JavaScript</span>
+                <div class="progress-bar" data-percent="85">
+                  <div class="progress-fill"><span>85%</span></div>
+                </div>
+              </div>
+
+              <div class="skill">
+                <span>WordPress</span>
+                <div class="progress-bar" data-percent="92">
+                  <div class="progress-fill"><span>92%</span></div>
+                </div>
+              </div>
+
+              <div class="skill">
+                <span>SQL</span>
+                <div class="progress-bar" data-percent="87">
+                  <div class="progress-fill"><span>87%</span></div>
+                </div>
+              </div>
+            </div>
+
+                  <!-- Right Column -->
+                  <div class="skills-category">
+                    <h3>APP DEVELOPMENT</h3>
+
+                    <div class="skill">
+                      <span>Flutter / Dart</span>
+                      <div class="progress-bar" data-percent="90">
+                        <div class="progress-fill"><span>90%</span></div>
+                      </div>
+                    </div>
+
+                    <div class="skill">
+                      <span>API Integrations</span>
+                      <div class="progress-bar" data-percent="80">
+                        <div class="progress-fill"><span>80%</span></div>
+                      </div>
+                    </div>
+
+                    <div class="skill">
+                      <span>Firebase / Firestore</span>
+                      <div class="progress-bar" data-percent="72">
+                        <div class="progress-fill"><span>72%</span></div>
+                      </div>
+                    </div>
+
+                    <div class="skill">
+                      <span>MySQL</span>
+                      <div class="progress-bar" data-percent="78">
+                        <div class="progress-fill"><span>78%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+           <!-- EXPERIENCE -->
       <!-- Experience Section -->
-      <section id="timeline-section">
-        <h2 class="timeline-title">My Journey</h2>
+      <section>
+        <h2 class="timeline-title">Journey</h2>
 
         <div class="timeline">
 
@@ -192,6 +271,7 @@
 
         </div>
       </section>
+      </section>
 
       <!-- PORTFOLIO -->
       <section id="portfolio" class=" text-center py-5 bg-trans" data-aos="fade-up">
@@ -232,7 +312,7 @@
 
         <!-- SERVICES -->
       <!-- Services Section -->
-      <section id="services" class="py-5 bg-dark text-center text-white">
+      <section id="services" class="py-5  text-center text-white">
         <div class="container py-5">
           <h2 class="section-title mb-4" data-aos="zoom-in">Services</h2>
           <div class="row g-4 mt-4">
@@ -265,111 +345,54 @@
         </div>
       </section>
 
-  
-<!-- SKILLS -->
-<section id="skills" class="py-5 text-center text-white" data-aos="fade-up">
-  <div class="container p-4">
-    <h2 class="section-title text-glow" data-aos="zoom-in">⚡ Skills</h2>
+<!-- CONTACT -->
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
     
-    <div class="row g-4 mt-4 justify-content-center">
-      
-      <!-- Example Skill -->
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="200">
-        <i class="fa-brands fa-figma fa-2x text-info floating"></i>
-        <p>Figma <span class="percent">95%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-info glow-bar" style="width:95%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="400">
-        <i class="fa-solid fa-camera-retro fa-2x text-warning floating"></i>
-        <p>Photoshop <span class="percent">90%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-warning glow-bar" style="width:90%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
-        <i class="fa-solid fa-palette fa-2x text-danger floating"></i>
-        <p>Illustrator <span class="percent">85%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-danger glow-bar" style="width:85%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
-        <i class="fa-brands fa-html5 fa-2x text-danger floating"></i>
-        <p>HTML <span class="percent">100%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-danger glow-bar" style="width:100%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
-        <i class="fa-brands fa-css3-alt fa-2x text-primary floating"></i>
-        <p>CSS <span class="percent">95%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-primary glow-bar" style="width:95%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
-        <i class="fa-brands fa-js fa-2x text-warning floating"></i>
-        <p>JavaScript <span class="percent">80%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-warning glow-bar" style="width:80%"></div>
-        </div>
-      </div>
-      
-      <div class="col-6 col-md-3 skill-card" data-aos="flip-left" data-aos-delay="600">
-        <i class="fa-brands fa-bootstrap fa-2x text-purple floating"></i>
-        <p>Bootstrap <span class="percent">90%</span></p>
-        <div class="progress futuristic">
-          <div class="progress-bar bg-purple glow-bar" style="width:90%"></div>
+    <!-- Left Side Info -->
+    <div class="contact-info">
+      <p class="subtitle">LET’S CONNECT</p>
+      <h2 class="title">How Can I <span>Help You?</span></h2>
+      <p class="desc">
+        Have a question, project, or just want to say hi?  
+        I’d love to hear from you — drop me a message below.
+      </p>
+
+      <div class="info-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <p class="label">Email</p>
+          <p class="value">davidadamsmay@gmail.com</p>
         </div>
       </div>
 
+      <div class="info-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <p class="label">Phone</p>
+          <p class="value">+123 456 7890</p>
+        </div>
+      </div>
     </div>
+
+    <!-- Right Side Form -->
+    <div class="contact-form-card">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+
   </div>
 </section>
 
-
-  <!-- CONTACT -->
-<section id="contact" class="contact py-5 text-center">
-  <div class="container p-4">
-    <h2 class="section-title text-glow mb-3">🔹 Contact Me</h2>
-    
-    <!-- Contact Form -->
-    <form class="contact-form mx-auto p-3 futuristic-form">
-      <div class="mb-2">
-        <input type="text" class="form-control neon-input" placeholder="Name" required>
-      </div>
-      <div class="mb-2">
-        <input type="email" class="form-control neon-input" placeholder="Email" required>
-      </div>
-      <div class="mb-2">
-        <textarea class="form-control neon-input" rows="3" placeholder="Message" required></textarea>
-      </div>
-      <button type="submit" class="btn neon-btn w-100">
-        <i class="fa-solid fa-paper-plane me-2"></i> Send
-      </button>
-    </form>
-
-    <!-- Social Icons -->
-    <div class="social-icons mt-4">
-      <a href="mailto:admdvd14@gmail.com" class="icon-link"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://wa.me/your-number" target="_blank" class="icon-link"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="viber://chat?number=your-number" target="_blank" class="icon-link"><i class="fa-brands fa-viber"></i></a>
-      <a href="https://linkedin.com/in/your-profile" target="_blank" class="icon-link"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/your-username" target="_blank" class="icon-link"><i class="fa-brands fa-github"></i></a>
-      <a href="https://facebook.com/your-profile" target="_blank" class="icon-link"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://t.me/your-telegram" target="_blank" class="icon-link"><i class="fa-brands fa-telegram"></i></a>
-    </div>
-  </div>
-</section>
-
-  <!-- FOOTER -->
+ <!-- FOOTER -->
   <footer class="py-3 text-center bg-black text-white">
     <p class="small mb-0">© <span id="year"></span> Adams Portfolio</p>
   </footer>
