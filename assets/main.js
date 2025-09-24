@@ -1,12 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("reloadOverlay");
+ document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("reloadOverlay");
 
-  // Optional: add a small delay for effect
-  setTimeout(() => {
-    overlay.classList.add("fade-out");
-  }, 2000); // 2 seconds then fade out
-});
+    // Disable scroll while overlay is showing
+    document.body.style.overflow = "hidden";
 
+    // Small delay for nice effect
+    setTimeout(() => {
+      overlay.classList.add("fade-out");
+
+      // Re-enable scroll after transition
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 800); // match transition time
+    }, 1500); // how long overlay stays before fading
+  });
 
 // Reload animation end
 

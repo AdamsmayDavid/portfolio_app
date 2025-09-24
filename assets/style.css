@@ -9,63 +9,42 @@ body {
 
 /* reload body */
 /* Fullscreen overlay */
-#reloadOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, #0d0d0d, #000);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 1s ease, visibility 1s ease;
-}
+/* Fullscreen overlay */
+  #reloadOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
 
-/* Futuristic spinning circle */
-.loader {
-  width: 80px;
-  height: 80px;
-  border: 6px solid transparent;
-  border-top: 6px solid #00fff7;
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite, glow 2s ease-in-out infinite alternate;
-  box-shadow: 0 0 20px #00fff780;
-  margin-bottom: 20px;
-}
+  /* Fade-out effect */
+  #reloadOverlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+  /* Example loader inside */
+  .loader {
+    border: 6px solid #222;
+    border-top: 6px solid #ff0066;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    
+  }
 
-@keyframes glow {
-  from { filter: drop-shadow(0 0 10px #00fff7); }
-  to   { filter: drop-shadow(0 0 20px #ff00ff); }
-}
-
-/* Futuristic glowing text */
-.loading-text {
-  font-family: "Orbitron", sans-serif;
-  font-size: 20px;
-  color: #00fff7;
-  letter-spacing: 3px;
-  animation: textGlow 1.5s infinite alternate;
-}
-
-@keyframes textGlow {
-  from { color: #00fff7; text-shadow: 0 0 5px #00fff7, 0 0 15px #00fff7; }
-  to   { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff; }
-}
-
-/* Fade out */
-#reloadOverlay.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-
-
+  @keyframes spin {
+    100% { transform: rotate(360deg);box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066; }
+  }
 /* reload body end */
 
 /* navbar */
