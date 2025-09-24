@@ -38,11 +38,13 @@
   <nav class="navbar navbar-expand-lg bg-trans navbar-dark fixed-top custom-navbar">
     <div class="container">
       <a id="" class=" navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
-        <img src="assets/images/loog.png" alt="logo" class=" h-50 w-50">
+        <img src="assets/images/mainAsset 6.png" alt="logo" class=" h-50 w-50">
       </a>
-      <button id="NavBar" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button id="NavBar" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+          </button>
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav gap-3">
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
@@ -146,9 +148,9 @@
               <!-- Skills Section -->
       <section class="skills-section ">
         <div class="container">
-          <h2 class="section-title">SKILLS</span></h2>
+          <h2 class="section-title">Skills</span></h2>
           <p class="section-subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. -->
           </p>
 
           <div class="skills-container">
@@ -274,41 +276,79 @@
       </section>
 
       <!-- PORTFOLIO -->
-      <section id="portfolio" class=" text-center py-5 bg-trans" data-aos="fade-up">
-            <div class="container py-5">
-          <h2 class="section-title mb-4">Recent Projects</h2>
-          <div class="text-center mb-3 py-5">
-            <button class="btn filter-btn " data-filter="all">All</button>
-            <button class="btn filter-btn" data-filter="website">Website</button>
-            <button class="btn filter-btn" data-filter="branding">Branding</button>
-            <button class="btn filter-btn" data-filter="photo">Photo Manipulation</button>
-            <button class="btn filter-btn" data-filter="logo">Logo Design</button>
-          </div>
-
-          <div class="multi-carousel-container" id="multiCarousel">
-            <div class="multi-carousel-inner" id="carouselInner">
-              <div class="multi-carousel-item" data-category="website">
-                <div class="img-container">
-                  <img src="https://picsum.photos/id/1011/800/600" alt="Website">
-                  <div class="caption">
-                    Website Project
-                  </div>
-                </div>
-              </div>
-              <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1012/800/600" alt="Branding"></div></div>
-              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1013/800/600" alt="Photo"></div></div>
-              <div class="multi-carousel-item" data-category="logo"><div class="img-container"><img src="https://picsum.photos/id/1014/800/600" alt="Logo"></div></div>
-              <div class="multi-carousel-item" data-category="website"><div class="img-container"><img src="https://picsum.photos/id/1015/800/600" alt="Website"></div></div>
-              <div class="multi-carousel-item" data-category="branding"><div class="img-container"><img src="https://picsum.photos/id/1016/800/600" alt="Branding"></div></div>
-              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1018/800/600" alt="Photo"></div></div>
-              <div class="multi-carousel-item" data-category="photo"><div class="img-container"><img src="https://picsum.photos/id/1019/800/600" alt="Logo"></div></div>
-            </div>
-            <button class="multi-carousel-control-prev" id="prevBtn"><span class="carousel-control-prev-icon"></span></button>
-            <button class="multi-carousel-control-next" id="nextBtn"><span class="carousel-control-next-icon"></span></button>
-          </div>
+  <!-- PORTFOLIO -->
+<section id="portfolio" class="py-5 bg-trans" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      
+      <!-- Left side title + dropdown filter -->
+      <div class="col-lg-4 col-md-12 mb-4 text-center text-lg-start">
+        <h2 class="section-title mb-4">Recent Projects</h2>
+        
+        <!-- Dropdown filter -->
+        <div class="dropdown mb-3">
+          <button class="btn btn-light dropdown-toggle w-100" type="button" id="filterDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Projects
+          </button>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="filterDropdown">
+            <li><a class="dropdown-item filter-btn" data-filter="all">All</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="website">Website</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="branding">Branding</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="photo">Photo Manipulation</a></li>
+            <li><a class="dropdown-item filter-btn" data-filter="logo">Logo Design</a></li>
+          </ul>
         </div>
-      </section>
 
+        <!-- View More button -->
+        <a href="project.html" class="btn btn-outline-light w-100 mt-3" target="_blank">View More</a>
+      </div>
+
+      <!-- Right side carousel -->
+      <div class="col-lg-8 col-md-12">
+        <div class="multi-carousel-container" id="multiCarousel">
+          <div class="multi-carousel-inner d-flex" id="carouselInner">
+            
+            <div class="multi-carousel-item" data-category="website" data-bg="https://picsum.photos/id/1011/1200/800">
+              <div class="img-container">
+                <img src="https://picsum.photos/id/1011/600/400" class="img-fluid rounded" alt="Website">
+                <div class="caption">Website Project</div>
+              </div>
+            </div>
+
+            <div class="multi-carousel-item" data-category="branding" data-bg="https://picsum.photos/id/1012/1200/800">
+              <div class="img-container">
+                <img src="https://picsum.photos/id/1012/600/400" class="img-fluid rounded" alt="Branding">
+              </div>
+            </div>
+
+            <div class="multi-carousel-item" data-category="photo" data-bg="https://picsum.photos/id/1013/1200/800">
+              <div class="img-container">
+                <img src="https://picsum.photos/id/1013/600/400" class="img-fluid rounded" alt="Photo">
+              </div>
+            </div>
+
+            <div class="multi-carousel-item" data-category="logo" data-bg="https://picsum.photos/id/1014/1200/800">
+              <div class="img-container">
+                <img src="https://picsum.photos/id/1014/600/400" class="img-fluid rounded" alt="Logo">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel controls -->
+          <button class="multi-carousel-control-prev" id="prevBtn">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="multi-carousel-control-next" id="nextBtn">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         <!-- SERVICES -->
       <!-- Services Section -->
@@ -360,34 +400,44 @@
       </p>
 
       <div class="info-item">
-        <i class="fa-solid fa-envelope"></i>
-        <div>
-          <p class="label">Email</p>
-          <p class="value">davidadamsmay@gmail.com</p>
-        </div>
-      </div>
+  <i class="fa-solid fa-envelope"></i>
+  <div>
+    <p class="label">Email</p>
+    <p class="value">davidadamsmay@gmail.com</p>
+  </div>
+</div>
 
-      <div class="info-item">
-        <i class="fa-solid fa-phone"></i>
-        <div>
-          <p class="label">Phone</p>
-          <p class="value">+123 456 7890</p>
-        </div>
-      </div>
+<div class="info-item">
+  <i class="fa-solid fa-phone"></i>
+  <div>
+    <p class="label">Phone</p>
+    <p class="value">(+63) 909-9319-246</p>
+  </div>
+</div>
     </div>
 
     <!-- Right Side Form -->
-    <div class="contact-form-card">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">
-          <i class="fa-solid fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
+<div class="contact-form-card">
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Subject" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">
+      <i class="fa-solid fa-paper-plane"></i> Send Message
+    </button>
+  </form>
+
+  <!-- Social Icons Row -->
+  <div class="social-icons mt-4">
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://t.me/yourusername" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+    <a href="https://wa.me/639099319246" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="viber://chat?number=%2B639099319246"><i class="fa-brands fa-viber"></i></a>
+  </div>
+</div>
+
 
   </div>
 </section>

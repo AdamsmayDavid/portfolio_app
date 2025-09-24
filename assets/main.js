@@ -87,7 +87,7 @@ class Star {
     this.speed = speed;
   }
   draw() {
-    ctx.fillStyle = "rgba(0, 200, 255, 0.8)";
+    ctx.fillStyle = "#ff0066";
     ctx.shadowBlur = 10;
     ctx.shadowColor = "#00c6ff";
     ctx.beginPath();
@@ -194,9 +194,9 @@ window.addEventListener('scroll', function () {
 
   // Navbar shrink effect
   if (scrollY > 100) {
-    navbar.classList.add('shrink');
+    navbar.classList.add('shrink', 'shadow');
   } else {
-    navbar.classList.remove('shrink');
+    navbar.classList.remove('shrink', 'shadow');
   }
 });
 
@@ -215,6 +215,13 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     // }
   });
 });
+
+const toggler = document.getElementById('NavBar');
+
+toggler.addEventListener('click', function () {
+  this.classList.toggle('active');
+});
+
 
 // navbar end
 
@@ -330,6 +337,15 @@ counters.forEach(counter => {
   window.addEventListener("resize",()=>{ updateConfig(); updateCarousel(); });
 });
 
+// dropdown
+
+// Update dropdown button text when an option is clicked
+const dropdownBtn = document.getElementById("filterDropdown");
+document.querySelectorAll(".dropdown-menu .filter-btn").forEach(option => {
+  option.addEventListener("click", function () {
+    dropdownBtn.textContent = this.textContent;
+  });
+});
 
   // emoji hi
   
@@ -398,3 +414,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   progressBars.forEach(bar => observer.observe(bar));
 });
+
+
+//second page portfolio
+
+ const cards = document.querySelectorAll("#portfolio .multi-carousel-item");
+  const portfolio = document.querySelector("#portfolio");
+  const defaultBg = "linear-gradient(rgba(22,24,49,0.95), rgba(22,24,49,0.8), rgba(22,24,49,0.95)), #161831";
+
+  cards.forEach(card => {
+    const bg = card.getAttribute("data-bg");
+    card.addEventListener("mouseenter", () => {
+      portfolio.style.background = `linear-gradient(rgba(22,24,49,0.95), rgba(22,24,49,0.8), rgba(22,24,49,0.95)), url(${bg}) center/cover no-repeat fixed`;
+    });
+    card.addEventListener("mouseleave", () => {
+      portfolio.style.background = defaultBg;
+    });
+  });
+
+// Fade effect for filtering
+// const items = document.querySelectorAll(".multi-carousel-item");
+
+// filterBtns.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     const filter = btn.getAttribute("data-filter");
+
+//     items.forEach(item => {
+//       item.style.transition = "all 0.4s ease";
+//       if (filter === "all" || item.dataset.category === filter) {
+//         item.style.opacity = "1";
+//         item.style.transform = "scale(1)";
+//         item.style.display = "block";
+//       } else {
+//         item.style.opacity = "0";
+//         item.style.transform = "scale(0.9)";
+//         setTimeout(() => (item.style.display = "none"), 400);
+//       }
+//     });
+
+//     // Update dropdown text
+//     const dropdownBtn = document.getElementById("filterDropdown2");
+//     dropdownBtn.textContent = btn.textContent;
+//   });
+// });
